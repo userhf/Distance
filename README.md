@@ -39,7 +39,9 @@ void loop() {
  else {
  /* Send the distance to the computer using Serial protocol, and
  turn LED OFF to indicate successful reading. */
- Serial.println(distance);
+ for (int i = 0, i <distance, i++){
+ Serial.println("#");
+ }
  digitalWrite(LEDPin, LOW);
  
  //Turn off LED1-3
@@ -56,6 +58,6 @@ if (distance > 3){ //When the distance is more than 3 in,
    digitalWrite(Led4, HIGH); //Turn LED3 on
  }
  }
- //Delay before next reading.
+ //Delay 70 ms before next reading
  delay(70);
 }
