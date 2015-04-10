@@ -57,17 +57,32 @@ void loop() {
  digitalWrite(Led2, LOW);
  digitalWrite(Led3, LOW);
  digitalWrite(Led4, LOW);
-if (distance > 2){ //When the distance is more than 3 in,
-  digitalWrite(Led2, HIGH); //Turn LED1 on
-  tone (SpkrPin, 261.5); //Speaker plays C
-}
- if (distance > 8){ //When the distance is more than 6 in,
-   digitalWrite(Led3, HIGH); //Turn LED2 on
-   tone (SpkrPin, 329.5); //Speaker plays E
+ if (distance > 1){//When the distance to the sensor is 1 in,
+ tone (SpkrPin, 261.63) //Speaker plays Middle C
+ digitalWrite(Led2, HIGH); //Turn on first LED
  }
- if (distance > 14){ //When the distance is more than 9 in,
-   digitalWrite(Led4, HIGH); //Turn LED3 on
-   tone (SpkrPin, 392); //Speaker plays G
+ if (distance > 6){ //When the distance to the sensor is 6 in,
+ tone (SpkrPin, 293.66); //Speaker plays D
+ }
+ if (distance > 11){ //When the distance to the sensor is 11 in,
+ tone (SpkrPin, 329.63); //Speaker plays E
+ digitalWrite(Led3, HIGH); //Turn on second LED
+ }
+ if (distance > 16){ //When the distance to the sensor is 16 in,
+ tone (SpkrPin, 349.23); //Speaker plays F
+ }
+ if (distance > 21){ //When the distance to the sensor is 21 in,
+ tone (SpkrPin, 783.99); //Speaker plays G
+ }
+ if (distance > 26){ //When the distance to the sensor is 26 in,
+ tone (SpkrPin, 440); //Speaker plays A
+ digitalWrite(Led3, HIGH); // Turn on third LED
+ }
+ if (distance > 31){ //When the distance to the sensor is 31 in,
+ tone (SpkrPin, 493.88); //Speaker plays B
+ }
+ if (distance > 36){ //When the distance to the sensor is 36 in,
+ tone (SpkrPin, 523.25); //Speaker plays C
  }
  //Delay 1/10 s before next reading
  delay(10);
